@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Behind the build – Washout</title>
+<style>
+:root{--sea:#0b5c7a;--sand:#f6f1e7;--ink:#14212b;--muted:#5b6b75;--line:#d9e2e7}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--sand);color:var(--ink);font-size:17px;line-height:1.55}
+.wrap{max-width:680px;margin:0 auto;padding:24px 18px 48px}
+h1{font-size:28px;margin:0 0 4px}
+.case{display:inline-block;background:var(--sea);color:#fff;font-weight:800;padding:6px 14px;border-radius:999px;margin:8px 0 20px}
+h2{font-size:21px;margin:30px 0 10px;padding-top:18px;border-top:1px solid var(--line)}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:10px 0}
+.hunch{border:3px solid var(--sea)}
+.label{font-size:13px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+ul{padding-left:22px}
+a{color:var(--sea)}
+table{width:100%;border-collapse:collapse;font-size:16px}
+td{border-top:1px solid var(--line);padding:8px 6px;vertical-align:top}
+td:first-child{font-weight:700;width:34%}
+.back{display:inline-block;margin-top:30px;font-weight:700}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>Behind the build</h1>
+<div class="case">Assigned case: F — Atlantic Edge Surf School</div>
+
+<div class="card hunch">
+  <div class="label">Hunch (before AI)</div>
+  <p>WRITE YOUR OWN HUNCH SENTENCE HERE, EXACTLY AS YOU WROTE IT BEFORE USING AI.</p>
+</div>
+
+<h2>1. Niche</h2>
+<table>
+  <tr><td>Who they are</td><td>Small, owner-run surf schools on Ireland's west coast (Clare, Sligo, Donegal, Kerry): one beach, a handful of instructors, busy in summer and often cancelled by wind and swell.</td></tr>
+  <tr><td>Buyer</td><td>The owner of the surf school.</td></tr>
+  <tr><td>Daily user</td><td>The owner or head instructor, on the beach, on their phone.</td></tr>
+  <tr><td>Pain (invented quotes)</td><td>"When the surf's off I lose the whole morning on the phone with the diary on my knee." / "Some bookings never get rebooked; they just slip between WhatsApp and the diary."</td></tr>
+</table>
+<p>I narrowed the case market (outdoor activity providers in Ireland whose sessions get cancelled by weather) from a wider list I considered (surf, scuba diving, sailing, kayaking, adventure groups) down to surf schools, because the alpha was built for a surf school and the page needs to speak to one group.</p>
+
+<h2>2. Technology and how it's done today</h2>
+<p><b>Type of technology:</b> a mobile-first cancellation and rebooking tool, a small operations web app for the weather-cancelled day. It sits beside whatever the school already uses to take bookings.</p>
+<p><b>How the niche does it today:</b> a paper diary or spreadsheet, then phone calls and WhatsApp messages one customer at a time, or cancelling and rescheduling bookings one by one inside a general booking system.</p>
+
+<h3>Two real products that already do part of it</h3>
+<div class="card">
+  <b>FareHarbor</b>, <a href="https://fareharbor.com/" target="_blank" rel="noopener">fareharbor.com</a> (checked 20 October 2026)<br>
+  An all-in-one booking and business management platform for tour and activity operators. It covers online sales and operations, and is aimed mainly at established, higher-volume operators.
+</div>
+<div class="card">
+  <b>Bókun</b>, <a href="https://www.bokun.io/activity-booking-software" target="_blank" rel="noopener">bokun.io/activity-booking-software</a> (checked 20 October 2026)<br>
+  A booking platform for tour and activity businesses. Operators can close time slots and customers can change or cancel their own bookings through a self-service portal.
+</div>
+<p><b>Gap:</b> both are full booking platforms. Washout does one job, getting every washed-out booking rebooked fast from a phone, for small schools that may not want a whole new booking system.</p>
+
+<h2>3. Business model (assumption)</h2>
+<p>€99 one-off set-up plus €29 per month. <b>Reasoning:</b> one family of four that rebooks instead of being lost is worth €180 (4 × €45), which covers six months of the fee.</p>
+
+<h2>4. Lean PRD</h2>
+<table>
+  <tr><td>Hypothesis</td><td>Owners of small west-coast surf schools will join a waiting list for a phone tool that rebooks weather-cancelled lessons.</td></tr>
+  <tr><td>Audience</td><td>Owners of small surf schools on Ireland's west coast.</td></tr>
+  <tr><td>Call to action</td><td>Join the waiting list.</td></tr>
+  <tr><td>Success measure</td><td>20 waiting-list sign-ups, and at least 1 in 10 visitors opening the demo, within 4 weeks of sharing the page with surf schools (target, assumption).</td></tr>
+  <tr><td>Out of scope</td><td>Payments and refunds, automatic customer messages, importing real bookings, multi-staff sync, linking to existing booking systems.</td></tr>
+</table>
+
+<h2>5. Alpha test</h2>
+<p><b>What I tried:</b> on my phone, one-handed, the way Niamh would use it on the beach: cancelled the 16:30 session in Today, checked its booking moved to Rebook, moved a booking to a suggested session with one tap, refreshed the page to check the changes were saved, and checked the totals on Money.</p>
+<p><b>What broke or confused me:</b> the Money screen said "25 persons waiting", which reads wrong and looks unfinished.</p>
+<p><b>What I changed:</b> asked the AI to fix the wording to "people", then republished the demo and checked it on my phone again.</p>
+
+<h2>Assumptions</h2>
+<ul>
+  <li>The app runs in one browser on Niamh's phone, so the data saves on that device only.</li>
+  <li>Six fixed session times a day, 12 places each, €45 per person, as in the case.</li>
+  <li>The 48-hour red flag counts from the moment the session was cancelled.</li>
+  <li>Sessions that have already started cannot be cancelled. Niamh can also cancel future days.</li>
+  <li>An Undo button appears after every tap, because one-tap cancelling with wet hands could cause mistakes.</li>
+</ul>
+
+<h2>AI use</h2>
+<p>Both pages were built with Claude (Anthropic), working from my decisions on the case, niche, price and test. All business data is fictional sample data.</p>
+
+<a class="back" href="index.html">← Back to the landing page</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Washout – rebook weather-cancelled surf lessons</title>
+<style>
+:root{--sea:#0b5c7a;--sea-d:#073f54;--sand:#f6f1e7;--ink:#14212b;--muted:#5b6b75;--line:#d9e2e7;--green:#1b7a3d;--amber:#8a5a00;--amber-bg:#fff4d6}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--sand);color:var(--ink);font-size:18px;line-height:1.5}
+.wrap{max-width:640px;margin:0 auto;padding:0 18px}
+.hero{background:var(--sea);color:#fff;padding:40px 0 36px}
+.brand{font-weight:800;letter-spacing:.04em;font-size:15px;opacity:.85;margin:0 0 18px}
+h1{font-size:34px;line-height:1.15;margin:0 0 14px}
+.hero p{font-size:19px;margin:0 0 24px;color:#d6ecf3}
+.btn{display:block;text-align:center;text-decoration:none;font-weight:800;font-size:19px;padding:18px;border-radius:14px;border:none;width:100%;cursor:pointer;font-family:inherit}
+.btn-demo{background:#ffd54f;color:#3a2c00}
+.btn-ghost{background:transparent;color:#fff;border:2px solid #fff;margin-top:12px}
+.btn-main{background:var(--sea);color:#fff}
+section{padding:34px 0;border-bottom:1px solid var(--line)}
+h2{font-size:26px;margin:0 0 16px;line-height:1.2}
+.quote{background:#fff;border-left:5px solid var(--sea);border-radius:10px;padding:14px 16px;margin:0 0 12px;font-size:18px}
+.label{font-size:13px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.04em;margin:0 0 10px}
+ol.steps{list-style:none;padding:0;margin:0;counter-reset:s}
+ol.steps li{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 16px 16px 64px;margin-bottom:12px;position:relative;counter-increment:s}
+ol.steps li::before{content:counter(s);position:absolute;left:16px;top:14px;width:36px;height:36px;border-radius:50%;background:var(--sea);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center}
+ol.steps b{display:block;font-size:19px}
+.two{display:grid;gap:12px}
+.box{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px}
+.box h3{margin:0 0 8px;font-size:19px}
+.box ul{margin:0;padding-left:20px}
+.box.planned{background:var(--amber-bg);border-color:#f0d58a}
+.tag{display:inline-block;font-size:13px;font-weight:800;padding:3px 10px;border-radius:999px;margin-bottom:8px}
+.tag.now{background:#e7f5ec;color:var(--green)}
+.tag.plan{background:#fde7b0;color:var(--amber)}
+.price{background:#fff;border:3px solid var(--sea);border-radius:18px;padding:22px;text-align:center}
+.price .big{font-size:44px;font-weight:800;color:var(--sea);line-height:1}
+.price .small{color:var(--muted);font-size:16px;margin-top:6px}
+form{display:grid;gap:12px}
+label{font-weight:700;font-size:16px}
+input{width:100%;font:inherit;padding:14px;border:2px solid var(--line);border-radius:12px;background:#fff}
+input:focus{outline:none;border-color:var(--sea)}
+.thanks{background:#e7f5ec;border:2px solid var(--green);color:var(--green);border-radius:14px;padding:18px;font-weight:700}
+.thanks[hidden]{display:none}
+.note{font-size:14px;color:var(--muted)}
+footer{padding:28px 0 40px;text-align:center;font-size:15px;color:var(--muted)}
+footer a{color:var(--sea);font-weight:700}
+@media(min-width:640px){h1{font-size:42px}.two{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="brand">WASHOUT</p>
+    <h1>Surf's off? Don't lose a single booking.</h1>
+    <p>For surf schools on Ireland's west coast. Cancel a washed-out lesson in one tap and rebook every group from your phone, right there on the beach.</p>
+    <a class="btn btn-demo" href="https://giacomoporati.github.io/bookings-demo/" target="_blank" rel="noopener">Try the demo →</a>
+    <a class="btn btn-ghost" href="#waitlist">Join the waiting list</a>
+  </div>
+</header>
+
+<main class="wrap">
+
+<section>
+  <h2>Sound familiar?</h2>
+  <p class="label">Invented quotes, written to describe the problem</p>
+  <div class="quote">"Onshore gale, lessons off. Now I'm on the phone half the morning with the diary on my knee, trying to find a slot for a family of five."</div>
+  <div class="quote">"Some people just never get rebooked. They fall through the cracks between the diary and WhatsApp, and that's money gone."</div>
+  <div class="quote">"I'm standing on the beach in a wetsuit. I can't be typing into a laptop."</div>
+</section>
+
+<section>
+  <h2>How it works</h2>
+  <ol class="steps">
+    <li><b>Tap to cancel</b>When the surf says no, one tap cancels the session. Every booking on it goes straight onto a "to rebook" list.</li>
+    <li><b>Tap to rebook</b>Each booking shows the next three sessions with enough free places for that whole group. Tap one and it's moved.</li>
+    <li><b>See what's at risk</b>A money screen shows how many bookings still wait and their value in euro. Anything not rebooked after 48 hours turns red.</li>
+  </ol>
+  <p>Big buttons, bottom-of-screen tabs and an Undo button after every tap, so it works with one wet hand.</p>
+</section>
+
+<section>
+  <h2>What works today, and what's planned</h2>
+  <div class="two">
+    <div class="box">
+      <span class="tag now">IN THE DEMO NOW</span>
+      <h3>Working alpha</h3>
+      <ul>
+        <li>One-tap cancel of a session or a whole day</li>
+        <li>Rebook list with the next 3 sessions that fit the group</li>
+        <li>Red flag after 48 hours waiting</li>
+        <li>Euro value at risk</li>
+        <li>Tap-to-call each customer</li>
+        <li>Changes saved on your device</li>
+      </ul>
+    </div>
+    <div class="box planned">
+      <span class="tag plan">PLANNED, NOT BUILT YET</span>
+      <h3>Coming later</h3>
+      <ul>
+        <li>Automatic text or WhatsApp to customers</li>
+        <li>Load your own sessions and bookings</li>
+        <li>Shared between staff on several phones</li>
+        <li>Link to your existing booking system</li>
+      </ul>
+    </div>
+  </div>
+  <p class="note">The demo runs on made-up sample data for a fictional surf school.</p>
+</section>
+
+<section>
+  <h2>Price</h2>
+  <div class="price">
+    <div class="big">€29<span style="font-size:22px">/month</span></div>
+    <div class="small">plus €99 one-off set-up</div>
+    <div class="small">Planned launch pricing</div>
+  </div>
+  <p>For comparison, one family of four that rebooks instead of drifting away is worth €180 in lessons.</p>
+</section>
+
+<section id="waitlist">
+  <h2>Join the waiting list</h2>
+  <p>Be first to try Washout at your surf school.</p>
+  <form id="wl" novalidate>
+    <div><label for="school">Surf school name</label><input id="school" type="text" autocomplete="off"></div>
+    <div><label for="em">Email</label><input id="em" type="email" autocomplete="off"></div>
+    <button class="btn btn-main" type="submit">Join the waiting list</button>
+    <p class="note">This is a prototype: nothing you type here is sent or stored.</p>
+  </form>
+  <div id="thanks" class="thanks" hidden>Thanks, you're on the list! (Prototype: no details were sent anywhere.)</div>
+</section>
+
+</main>
+
+<footer>
+  <p>Washout is a concept product. The demo uses fictional sample data.</p>
+  <p><a href="notes.html">Behind the build</a></p>
+</footer>
+
+<script>
+document.getElementById('wl').addEventListener('submit',function(e){
+  e.preventDefault();
+  this.hidden=true;
+  document.getElementById('thanks').hidden=false;
+});
+</script>
+</body>
+</html>
